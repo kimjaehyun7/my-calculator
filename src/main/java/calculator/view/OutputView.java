@@ -1,5 +1,7 @@
 package calculator.view;
 
 public class OutputView {
-    // 출력 관련 메서드 추가 예정
+    public void printResult(int result) {
+        System.out.println("계산결과는 [" + result + "] 입니다.");
+    }
 }
