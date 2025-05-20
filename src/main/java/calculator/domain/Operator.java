@@ -25,6 +25,9 @@ public enum Operator {
     DIVIDE("/") {
         @Override
         public int apply(int a, int b) {
+            if (b == 0) {
+                throw new ArithmeticException("0으로 나눌 수 없습니다.");
+            }
             return a / b;
         }
     };
@@ -40,6 +43,7 @@ public enum Operator {
     public static Operator from(String symbol) {
         return Arrays.stream(values())
                 .filter(op -> op.symbol.equals(symbol))
-                .findAny().get(); // 예외처리 때 수정 예정
+                .findAny()
+                .orElseThrow(() -> new IllegalArgumentException("올바르지 않은 연산자입니다 : " + symbol));
     }
 }
