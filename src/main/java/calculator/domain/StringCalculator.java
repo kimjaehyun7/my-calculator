@@ -8,7 +8,7 @@ public class StringCalculator {
             throw new IllegalArgumentException("입력이 비어 있습니다.");
         }
 
-        if (!input.matches("^(\\S+\\s\\S+)(\\s\\S\\s\\S+)*$")) {
+        if (!input.matches("^(\\S+\\s\\S+)(\\s\\S+)*$")) {
             throw new IllegalArgumentException("입력 형식이 잘못되었습니다. 연산자와 피연산자 사이에 공백이 필요합니다.");
         }
 
